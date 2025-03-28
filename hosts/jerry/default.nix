@@ -12,6 +12,9 @@
   };
   nixpkgs.config.cudaSupport = true;
   imports = [
+    ../../pkgs/desktop
+    ../../pkgs/desktop/awesome
+    ../../pkgs/desktop/hyprland
     ./hardware.nix
   ];
 
@@ -33,7 +36,7 @@
     loader = {
       systemd-boot = {
         enable = true;
-        configurationLimit = 5;
+        configurationLimit = 10;
       };
       efi = {
         canTouchEfiVariables = true;
